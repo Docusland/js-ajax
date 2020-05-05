@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Cache-control" content="public">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Play with Ajax</title>
   <link rel="stylesheet" href="vendor/materialize-1.0.0/css/materialize.min.css">
@@ -10,17 +11,17 @@
   <div class="row">
     <form class="col s12">
       <div class="row mt-2">
-        <div class="input-field col s6 offset-s3">
+        <div class="input-field col s6 offset-s3" style="display: flex;">
           <input placeholder="Placeholder" id="zip_code" type="text" class="validate">
           <label for="zip_code">Zip Code</label>
+          <button id="btnAjax" class="btn btn-success" style="margin-left: 15px;">Valider</button>
         </div>
       </div>
     </form> 
   </div>
 
-  <div class="row" id='results'>
+<div class="row" id='results'></div>
 
-  </div>
   <script src='vendor/jquery-3.5.1/jquery.min.3.5.1.js'></script>
   <script src="vendor/materialize-1.0.0/js/materialize.js"></script>
   <script src='assets/js/script.js'></script>
