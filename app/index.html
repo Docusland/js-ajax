@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="Cache-control" content="public">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Play with Ajax</title>
@@ -8,7 +9,7 @@
 </head>
 <body>
   <div class="row">
-    <form class="col s12">
+    <form id ="form" action="javascript:verif();" class="col s12">
       <div class="row mt-2">
         <div class="input-field col s6 offset-s3">
           <input placeholder="Placeholder" id="zip_code" type="text" class="validate">
@@ -18,7 +19,11 @@
     </form> 
   </div>
 
+
   <div class="row" id='results'>
+    
+
+    
 
   </div>
   <script src='vendor/jquery-3.5.1/jquery.min.3.5.1.js'></script>
