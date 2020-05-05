@@ -1,10 +1,37 @@
 $( document ).ready(function() {
-    console.log('Ready to load the file');
-  // $.ajax({
-  // })
-  // .done(function( msg ) {
-  // })
-  // .fail(function( jqXHR, textStatus ) {
-  // });
-})  
 
+    console.log('Ready to load the file');
+      
+
+      $.ajax({
+        type: 'GET',
+        url: "./docs/laposte_hexasmal.csv",
+        dataType: 'text',
+      })
+      .done(function( data ) {
+        console.log("Request done");
+        var zipCode = $("#zip_code").val();
+        let poste_data = data.split(/\r?\n|\r/);
+        var table_data = "<table class='table table-bordered table-striped'>";
+        
+        for (var i = 0; i < 100; i++) {
+          var cell_data = poste_data[i].split(';');
+          table_data += '<tr>';
+          for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+            if (i === 0) {
+              table_data += '<th>'+cell_data[cell_count]+'</th>'
+            } else {
+              table_data += '<td>'+cell_data[cell_count]+'</td>'
+            }
+            table_data += '<br></tr>';
+          }
+          table_data += '</table>';
+          $("#results").html(JSON.stringify(table_data));
+        }
+        
+      })
+      .fail(function( jqXHR, textStatus ) {
+        alert("Request failed: " + textStatus);
+        console.error(jqXHR);
+      });
+})    
