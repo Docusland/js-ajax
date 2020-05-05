@@ -1,8 +1,6 @@
-tabCommune = $( document ).ready(function() {
-    console.log('Ready to load the file');
-   $.ajax({
+tabCommune =  $.ajax({
      type : 'get',
-     url : '../../app/docs/laposte_hexasmal.csv',
+     url : '../docs/laposte_hexasmal.csv',
      dataType : 'text'
    })
    .done(function( data ) {
@@ -13,7 +11,9 @@ tabCommune = $( document ).ready(function() {
      console.log(jqXHR);
      console.log(textStatus);
    });
-})
-for (tabCommune  as value)
+foreach (tabCommune  as colonne =>  value)
+{
+
+}
 
 
