@@ -1,10 +1,19 @@
-$( document ).ready(function() {
-    console.log('Ready to load the file');
-  // $.ajax({
-  // })
-  // .done(function( msg ) {
-  // })
-  // .fail(function( jqXHR, textStatus ) {
-  // });
-})  
+tabCommune =  $.ajax({
+     type : 'get',
+     url : '../docs/laposte_hexasmal.csv',
+     dataType : 'text'
+   })
+   .done(function( data ) {
+     console.log(data);
+     $("#results").html(JSON.stringify(data))
+   })
+   .fail(function( jqXHR, textStatus ) {
+     console.log(jqXHR);
+     console.log(textStatus);
+   });
+foreach (tabCommune  as colonne =>  value)
+{
+
+}
+
 
