@@ -1,5 +1,10 @@
 $( document ).ready(function() {
     console.log('Ready to load the file');
+
+
+   
+
+
     $.ajax({
       type : "GET",
       url :  'docs/laposte_hexasmal.csv ',
@@ -9,14 +14,14 @@ $( document ).ready(function() {
    .done( function (data) {
     var tableauDesVilles = data.split("\n");
     var ville="";
+    
    
+
     for (let i = 0; i < tableauDesVilles.length; i++) {
-      ville=ville+"<br>"+tableauDesVilles[i]
+      ville=ville+tableauDesVilles[i]
        
      }
-
-    
-     $("#test").html(ville)
+     
    })
    .fail(function( jqXHR, textStatus,errorThrow ) {
      console.log(jqXHR);
@@ -25,3 +30,17 @@ $( document ).ready(function() {
    });   
 })  
 
+const codePostale=2
+function recherche()
+{
+  for (let i = 0; i < tableauDesVilles.length; i++) 
+  {
+    var villeEtCode=tableauDesVilles[i].split(";")
+    if ( villeEtCode[codePostale]==$("zip_code"))
+    {
+      console.log("ouiii")
+    }
+    
+  }
+}
+   
