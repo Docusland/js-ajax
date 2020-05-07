@@ -18,7 +18,7 @@ $( document ).ready(function() {
      console.log(errorThrow)
    });   
 })
-
+var villeEtCode=[]
 $('#zip_code').keyup(recherche);
 
 const codePostale=2
@@ -26,17 +26,20 @@ const ville=1
 
 function recherche()
 {
+  if ($(this).val().length>=3){
+    
   for (let i = 0; i < tableauDesVilles.length; i++) 
   {
-    var villeEtCode=tableauDesVilles[i].split(";")
-   
-    for (let indexVilleEtCode = 0; indexVilleEtCode < villeEtCode.length; indexVilleEtCode++) 
-    { 
-      if ( villeEtCode[codePostale]==$(this).val())
+    villeEtCode=tableauDesVilles[i].split(";")
+  
+     if ( villeEtCode[codePostale].startsWith($(this).val()))
       {
-        $('#test').html(villeEtCode[ville])
+        console.log(villeEtCode[ville])
       }
-    }
+
+      
+    
   }
+}
 }
    
